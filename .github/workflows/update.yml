@@ -14,7 +14,7 @@ jobs:
           git clone --depth 1 https://github.com/ruby-on-bioc/biocgem-packages
       - name: Extract Gem
         run: |
-          cp -r biocgem-packages/TxDb.Hsapiens.UCSC.hg19.knownGene/* .
+          cp -r biocgem-packages/${GITHUB_REPOSITORY#*/}/* .
           rm -rf biocgem-packages
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
